@@ -1,3 +1,6 @@
-from django.test import TestCase
+import random
 
-# Create your tests here.
+lst = []
+for _ in range(10):
+    lst.append(random.randint(-10,10))
+print(lst)

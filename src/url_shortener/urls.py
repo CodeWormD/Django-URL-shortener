@@ -4,5 +4,5 @@ from . import views
 app_name = 'url_shortener'
 
 urlpatterns = [
-    path('', views.index, name='index'),
+    path('', views.create, name='index'),
 ]
