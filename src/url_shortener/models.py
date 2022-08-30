@@ -1,6 +1,7 @@
-from django.db import models
 import uuid
 from hashlib import md5
+
+from django.db import models
 
 
 class Link(models.Model):
