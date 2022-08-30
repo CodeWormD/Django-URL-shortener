@@ -7,7 +7,7 @@ def create(request):
     if request.method == 'POST':
         geturl = request.POST.get('url')
         obj = Link.create(link=geturl)
-        context = {         
+        context = {
             'url': obj.url,
             'shorturl': request.get_host() + '/s/' + obj.shorturl
         }
@@ -15,12 +15,11 @@ def create(request):
     else:
         return render(request, 'shortener.html')
 
+
 def redir(request, link):
     try:
         obj = Link.objects.get(shorturl=link)
         return redirect(obj.url)
-    except:
+    except Exception:
         obj = None
-
     return redirect(create)
-    
