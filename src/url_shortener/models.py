@@ -10,10 +10,10 @@ class Link(models.Model):
     
     
     @classmethod
-    def create(self, link):
+    def create(cls, link):
         short = md5(link.encode()).hexdigest()[:8]
         try:
-            obj = self.objects.create(url=link, shorturl=short)
+            obj = cls.objects.create(url=link, shorturl=short)
         except:
-            obj = self.objects.get(url=link)
+            obj = cls.objects.get(url=link)
         return obj
